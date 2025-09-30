@@ -1,0 +1,18 @@
+* { 
+    box-sizing: Border-box;
+
+}
+
+html, body {
+
+height: 100%;
+}
+
+body { 
+    margin: 0;
+}
+
+ body {
+
+    background-color: red;
+}
