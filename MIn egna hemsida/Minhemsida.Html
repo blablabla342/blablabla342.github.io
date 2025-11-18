@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Living – Demo Layout</title>
+
+  <!-- Din egen CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white font-serif">
+
+  <!-- 🟡 NAVBAR -->
+  <header class="text-gray-300 body-font bg-gray-800 shadow-lg navbar">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0 navbar-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-10 h-10 text-yellow-400 p-2 bg-gray-700 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-2xl font-bold text-yellow-400">Luxury Living</span>
+      </a>
+
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a href="Minhemsida.Html" class="mr-5 hover:text-yellow-400 cursor-pointer navbar-link">Hem</a>
+        <a href="Om-oss.html" class="mr-5 hover:text-yellow-400 cursor-pointer navbar-link">Om Oss</a>
+        <a href="Galeri.Html" class="mr-5 hover:text-yellow-400 cursor-pointer navbar-link">Galleri</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- 🟣 HERO-SEKTION -->
+  <section class="h-[80vh] flex flex-col justify-center items-center text-center bg-cover bg-center relative hero"
+    style="background-image: url('cool.jpg');">
+
+    <div class="absolute inset-0 bg-black/40 hero-overlay"></div>
+
+    <div class="z-10 px-4 hero-title">
+      <h1 class="text-5xl font-bold text-yellow-400 mb-4">Upplev Äkta Lyx</h1>
+      <p class="text-lg text-gray-200 mb-6 max-w-xl mx-auto">
+        Elegans, komfort och stil — allt på ett ställe.
+      </p>
+
+      <a href="Galeri.Html" class="btn-black">
+        Utforska Mer
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- 🔵 FOOTER -->
+  <footer class="bg-gray-950 border-t border-gray-800 py-10">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <div class="text-center md:text-left">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Luxury Living</h3>
+        <p class="text-gray-400 text-sm max-w-md">
+          Upplev en värld av elegans och komfort – skapad för dig som vill ha det lilla extra.
+        </p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-3 text-gray-400 text-sm text-center">
+        <a href="Minhemsida.Html" class="hover:text-yellow-400 transition">Hem</a>
+        <a href="Om-oss.html" class="hover:text-yellow-400 transition">Om Oss</a>
+        <a href="Galeri.Html" class="hover:text-yellow-400 transition">Galleri</a>
+      </div>
+
+      
+    </div>
+
+    <div class="text-center text-gray-500 text-xs mt-6 border-t border-gray-800 pt-4">
+      &copy; 2025 Luxury Living. Alla rättigheter reserverade.
+    </div>
+  </footer>
+
+</body>
+</html>
