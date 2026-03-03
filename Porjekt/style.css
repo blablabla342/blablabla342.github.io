@@ -153,6 +153,36 @@ nav a:hover {
     line-height: 1.6; 
 }
 
+/* Like-knapp styling */
+.like-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    filter: grayscale(1);
+    outline: none;
+}
+
+.like-btn.active {
+    filter: grayscale(0);
+    border-color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+    transform: scale(1.1);
+}
+
+.like-btn:hover {
+    border-color: #666;
+}
+
+.like-btn .count {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
 /* --- Scroll Gallery --- */
 .sw-gallery { 
     background: transparent; 
@@ -251,7 +281,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav { display: none; } /* Döljer vanlig nav på mobilen */
+    nav { display: none; }
     
     .menu-toggle { 
         display: flex; 
