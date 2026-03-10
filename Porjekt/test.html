@@ -1,18 +1,81 @@
+<!--
+PLAN FÖR SIDANS STRUKTUR OCH SEKTIONER
+
+Denna HTML-fil innehåller en komplett företagshemsida för Pulsehome, ett företag som specialiserar sig på smarta hem-lösningar.
+Sidan är uppdelad i följande sektioner med specifika syften och implementationer:
+
+1. HEADER-SEKTION:
+   - Syfte: Tillhandahålla navigation och företagsidentitet högst upp på sidan
+   - Innehåll: Logotyp, huvudmeny, hamburger-meny för mobil
+   - Implementation: Fixerad positionering, responsiv design med media queries
+   - Tekniska detaljer: Använder flexbox för layout, z-index för lagerordning
+
+2. MOBIL NAVIGATION:
+   - Syfte: Tillhandahålla navigation på små skärmar där desktop-menyn inte får plats
+   - Innehåll: Samma länkar som huvudmenyn, men vertikalt arrangerade
+   - Implementation: Dold som standard, visas/döljs med JavaScript toggle
+   - Tekniska detaljer: Position: fixed, right: -100% som standard, animeras till right: 0
+
+3. HERO-SEKTION:
+   - Syfte: Skapa första intryck, presentera företagets värdeerbjudande
+   - Innehåll: Bakgrundsbild, huvudrubrik, slogan, call-to-action knapp
+   - Implementation: Full viewport-höjd, centrerat innehåll med flexbox
+   - Tekniska detaljer: Bakgrundsbild positionerad absolut, z-index för lager
+
+4. PROFIL-SEKTION:
+   - Syfte: Bygga förtroende genom att presentera företagets ledare
+   - Innehåll: Profilbild, namn, titel, kort biografi
+   - Implementation: Centrerad layout, rundad bild med CSS
+   - Tekniska detaljer: Max-width container, flexbox för vertikal centrering
+
+5. TJÄNSTER-SEKTION:
+   - Syfte: Visa företagets expertisområden och tjänster
+   - Innehåll: Fyra interaktiva kort med gillningsfunktion
+   - Implementation: CSS Grid för responsiv layout, JavaScript för interaktivitet
+   - Tekniska detaljer: Hover-effekter, active states för knappar
+
+6. FOOTER-SEKTION:
+   - Syfte: Tillhandahålla kontaktinformation och ytterligare företagsinfo
+   - Innehåll: Företagsbeskrivning, länkar, kontaktuppgifter, sociala medier
+   - Implementation: CSS Grid för flera kolumner, responsiv design
+   - Tekniska detaljer: Semantiska HTML-element, placeholder-länkar
+
+Övergripande tekniska implementationer:
+- Semantisk HTML5 för bättre SEO och tillgänglighet
+- Responsiv design med media queries
+- CSS Flexbox och Grid för moderna layouts
+- JavaScript för interaktivitet (meny, gillningar, tema-växling)
+- Modulär CSS-struktur med kommentarer för underhåll
+-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulsehome</title> 
+    <title>Pulsehome | Framtidens Smarta Hem</title> 
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
 <body>
 
+    <!-- 
+    HEADER-SEKTION: Huvudnavigation och företagsidentitet
+    
+    Syfte: Tillhandahåller primär navigation och varumärkesigenkänning
+    Tekniska detaljer:
+    - class="main-header": CSS-selector för styling av hela header-elementet
+    - Logotyp-länk till startsidan för hemnavigering
+    - Nav-element innehåller alla huvudnavigeringslänkar
+    - menu-toggle: Hamburger-knapp som endast visas på mobila enheter
+    - Använder semantisk HTML (<header>, <nav>) för bättre SEO
+    
+    Interaktivitet: Hamburger-knappen kopplas till JavaScript för mobilmeny
+    -->
     <header class="main-header">
         <a href="index.html" class="logo">Pulsehome</a>
         <nav>
             <a href="index.html">Start</a>
-            <a href="Tjanster.html">Tjänster</a>
+            <a href="#tjanster">Tjänster</a>
             <a href="#karta">Hitta oss</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
@@ -21,61 +84,144 @@
         </div>
     </header>
 
+    <!-- 
+    MOBIL NAVIGATION: Responsiv meny för små skärmar
+    
+    Syfte: Tillhandahåller samma navigation som desktop-versionen på mobila enheter
+    Tekniska detaljer:
+    - class="mobile-nav mobile-nav-panel": CSS-selectors för styling och JavaScript-koppling
+    - Samma länkar som desktop-nav, men vertikalt arrangerade
+    - Dold som standard (display: none i CSS), visas genom JavaScript toggle
+    - Positioneras fixerat över innehållet när aktiv
+    
+    Interaktivitet: Visas/döljs när hamburger-knappen klickas via JavaScript
+    -->
     <div class="mobile-nav mobile-nav-panel">
-        <a href="index.html" onclick="toggleMenu()">Start</a>
-        <a href="Tjanster.html" onclick="toggleMenu()">Tjänster</a>
-        <a href="#karta" onclick="toggleMenu()">Hitta oss</a>
-        <a href="#kontakt" onclick="toggleMenu()">Kontakt</a>
+        <a href="index.html">Start</a>
+        <a href="#tjanster">Tjänster</a>
+        <a href="#karta">Hitta oss</a>
+        <a href="#kontakt">Kontakt</a>
     </div>
 
+    <!-- 
+    HERO-SEKTION: Första intrycket och värdeerbjudande
+    
+    Syfte: Skapa ett kraftfullt första intryck och kommunicera företagets kärnbudskap
+    Tekniska detaljer:
+    - class="hero": CSS-selector för fullskärm styling med flexbox-centrering
+    - Bakgrundsbild: Visuell representation av smarta hem-lösningar
+    - alt-attribut: "Hero bakgrund" för tillgänglighet och SEO
+    - Semantiska rubriker: h1 för huvudrubrik, följt av beskrivande paragraf
+    
+    Interaktivitet: Innehåller tema-växlingsknapp (hero-knapp) som ändrar sidans färgtheme
+    Layout: Centrerat innehåll med bakgrundsbild som täcker hela viewport-höjden
+    -->
     <div class="hero">
+        <img src="Gemini_Generated_Image_lzqf55lzqf55lzqf.png" alt="Hero bakgrund" class="hero-bg">
         <h1>Välkommen till Pulsehome</h1>
         <p>Innovativa lösningar för ditt hem</p>
-        <button class="hero-knapp">Kom igång</button>
+        <button class="hero-knapp" id="colorChangeBtn">Klicka här så händer inget</button>
     </div>
 
-    <section class="cards-Sektion">
+    <!-- 
+    PROFIL-SEKTION: Personlig presentation av företagsledaren
+    
+    Syfte: Bygga förtroende och skapa personlig koppling till företaget
+    Tekniska detaljer:
+    - section-element: Semantisk HTML5 för bättre SEO och tillgänglighet
+    - class="profile-section": CSS-selector för bakgrund och padding
+    - profile-container: Wrapper div för centrering och max-width
+    - Profilbild: Samma bild som hero, representerar företagsledaren
+    - alt-attribut: "Profilbild" för skärmläsare och tillgänglighet
+    
+    Hierarki: h2 för sektionsrubrik, följt av titel och beskrivning
+    Layout: Centrerad design med rundad bild och typografisk hierarki
+    -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <img src="Gemini_Generated_Image_lzqf55lzqf55lzqf.png" alt="Profilbild" class="profile-image">
+            <h2 class="profile-name">Axel Johansson</h2>
+            <p class="profile-title">Grundare & Teknisk Chef</p>
+            <p class="profile-description">Med över 15 års erfarenhet inom smart teknik och hemautomation leder jag Pulsehome mot framtiden.</p>
+        </div>
+    </section>
+
+    <!-- 
+    TJÄNSTER-SEKTION: Interaktiva kort som visar företagets kompetensområden
+    
+    Syfte: Presentera olika tjänster och expertisområden på ett engagerande sätt
+    Tekniska detaljer:
+    - section-element med id="tjanster": Semantisk HTML5 + ankarpunkt för navigation
+    - class="cards-Sektion": CSS-selector för grid-layout och styling
+    - cards-Ruta: Container för grid-systemet som arrangerar korten
+    - Varje kort (.card) innehåller rubrik, beskrivning och interaktiv gillningsknapp
+    
+    Interaktivitet: Gillningsknappar kopplade till JavaScript för räknarfunktion
+    Layout: Responsiv grid som anpassar antal kolumner baserat på skärmstorlek
+    -->
+    <section class="cards-Sektion" id="tjanster">
         <h2>Vår Erfarenhet</h2>
+        
         <div class="cards-Ruta">
+            <!-- Kort för Smart Teknik -->
             <div class="card">
                 <h3>Smart Teknik</h3>
                 <p>10+ år med automation och smarta hemsystem för att förbättra din livskvalité.</p>
                 <button class="like-btn">❤️ <span class="count">0</span></button>
             </div>
+            <!-- Kort för Hemdesign -->
             <div class="card">
                 <h3>Hemdesign</h3>
-                <p>Professionell installation och design av moderna bostäder med fokus på effektivitet.</p>
+                <p>Professionell installation och design av moderna bostäder.</p>
                 <button class="like-btn">❤️ <span class="count">0</span></button>
             </div>
+            <!-- Kort för Energi -->
             <div class="card">
-                <h3>Energi Sparande</h3>
-                <p>Specialiserad i energioptimering för att minska kostnader och miljöpåverkan.</p>
+                <h3>Energi</h3>
+                <p>Specialiserad i energioptimering för att minska kostnader.</p>
                 <button class="like-btn">❤️ <span class="count">0</span></button>
             </div>
+            <!-- Kort för Support -->
             <div class="card">
-                <h3>Kundservice</h3>
-                <p>24/7 support och consultation från våra erfarna tekniker och designers.</p>
+                <h3>Support</h3>
+                <p>24/7 support från våra erfarna tekniker och designers.</p>
                 <button class="like-btn">❤️ <span class="count">0</span></button>
             </div>
         </div>
     </section>
 
+    <!-- 
+    FOOTER-SEKTION: Avslutande information och kontaktuppgifter
+    
+    Syfte: Tillhandahålla viktig företagsinformation, kontaktuppgifter och ytterligare resurser
+    Tekniska detaljer:
+    - footer-element: Semantisk HTML5 för sidfot och kontaktinformation
+    - footer-container: CSS Grid-container för responsiv layout av flera kolumner
+    - footer-section: Individuella kolumner för olika typer av information
+    - id="kontakt": Ankarpunkt för navigation från header-länkar
+    
+    Struktur:
+    - Företagsbeskrivning och värdeerbjudande
+    - Länkar till viktiga sidor (integritet, användarvillkor)
+    - Kontaktinformation (e-post, telefon)
+    - Sociala medier-länkar
+    - Copyright-information i footer-bottom
+    
+    Layout: Responsiv grid som staplar kolumnerna vertikalt på små skärmar
+    -->
     <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <h4>Pulsehome</h4>
-                <p>Vi skapar framtidens smarta hem med fokus på innovation, säkerhet och användarvänlighet.</p>
+                <p>Vi skapar framtidens smarta hem med fokus på innovation.</p>
             </div>
             <div class="footer-section">
-                <h4>Navigering</h4>
-                <a href="index.html">Start</a>
-                <a href="Tjanster.html">Tjänster</a>
-                <a href="#karta">Hitta oss</a>
-                <a href="#kontakt">Kontakt</a>
+                <h4>Länkar</h4>
+                <a href="#">Integritetspolicy</a>
+                <a href="#">Användarvillkor</a>
             </div>
-            <div class="footer-section">
+            <div class="footer-section" id="kontakt">
                 <h4>Kontakt</h4>
-                <p>Gatan 123, 123 45 Stad</p>
                 <p>E-post: info@pulsehome.se</p>
                 <p>Tel: 010-123 45 67</p>
             </div>
@@ -83,7 +229,6 @@
                 <h4>Följ oss</h4>
                 <div class="social-links">
                     <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
                     <a href="#">LinkedIn</a>
                 </div>
             </div>
@@ -93,6 +238,20 @@
         </div>
     </footer>
 
+    <!-- 
+    JAVASCRIPT-INKLUDERING: Laddar interaktivitets-script
+    
+    Syfte: Aktivera alla interaktiva funktioner på sidan
+    Tekniska detaljer:
+    - script-element: Laddar extern JavaScript-fil
+    - src="scrript.js": Relativ sökväg till JavaScript-filen
+    - Placering: Längst ner i body för optimal laddningsprestanda
+    
+    Funktioner som aktiveras:
+    - Mobil meny toggle (hamburger-knapp)
+    - Gillningsknappar på tjänstekort
+    - Tema-växlingsknapp i hero-sektionen
+    -->
     <script src="scrript.js"></script>
 </body>
 </html>

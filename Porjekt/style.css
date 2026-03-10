@@ -1,299 +1,218 @@
 /* --- Grundinställningar --- */
+/* Återställer marginaler och padding, sätter box-sizing och typsnitt för hela sidan */
 * { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0; box-sizing: border-box; 
+    font-family: 'Segoe UI', sans-serif;
 }
 
-body {
-    background-color: #000;
-}
+/* Sätter svart bakgrund och vit text för hela sidan, med övergång för tema-växling */
+body { background-color: #000; color: white; transition: 0.5s; }
 
-/* --- Header & Navigering --- */
+/* --- Navigation (Vecka 1) --- */
+/*
+HEADER-SEKTION: Skapar en professionell navigation högst upp på sidan
+
+Syfte: Tillhandahålla enkel navigering mellan sidor och företagsidentitet
+Tekniska detaljer:
+- Fixerad positionering (position: fixed) så att headern alltid syns vid scrollning
+- Semitransparent bakgrund (rgba(0,0,0,0.9)) för modern look
+- Flexbox-layout för horisontell fördelning av element
+- Z-index: 1000 för att ligga över annat innehåll
+- Border-bottom för visuell separation från innehåll
+
+Responsiv design:
+- Desktop: Horisontell meny med flexbox
+- Mobil: Hamburger-meny som visar/döljer mobilpanel
+- Media queries hanterar växlingen mellan lägena
+*/
+
+/* Fixerad header högst upp på sidan */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 60px;
-    background: #000;
-    padding: 0 40px;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #222;
+    position: fixed; top: 0; width: 100%; height: 70px;
+    background: rgba(0,0,0,0.9); display: flex;
+    align-items: center; justify-content: space-between;
+    padding: 0 5%; z-index: 1000; border-bottom: 1px solid #222;
 }
 
-.logo { 
-    color: white; 
-    text-decoration: none; 
-    font-size: 20px; 
-    font-weight: bold; 
-}
+/* Logotyp-styling - företagsidentitet och hem-länk */
+.logo { color: white; text-decoration: none; font-weight: bold; font-size: 1.5rem; }
 
-nav { 
-    display: flex; 
-    gap: 30px; 
-}
+/* Desktop-navigation - horisontell meny för stora skärmar */
+nav { display: flex; gap: 2rem; }
+nav a { color: #ccc; text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
+nav a:hover { color: white; }
 
-nav a { 
-    color: white; 
-    text-decoration: none; 
-    font-size: 14px; 
-    transition: color 0.3s;
-}
+/* Mobilmeny-knapp (hamburger) - dold på desktop, synlig på mobil */
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.menu-toggle span { width: 25px; height: 2px; background: white; }
 
-nav a:hover {
-    color: #aaa;
-}
-
-/* Mobilnavigering (Dold som standard) */
+/* Mobil navigation-panel - dold som standard, visas med JavaScript */
 .mobile-nav {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #111;
-    padding: 20px;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 99;
+    display: none; position: fixed; top: 70px; left: 0; width: 100%;
+    background: #111; flex-direction: column; padding: 20px; gap: 1rem; z-index: 999;
 }
 
-/* --- Hero Sektion --- */
+/* --- Hero (Vecka 2) --- */
+/*
+HERO-SEKTION: Skapar ett kraftfullt första intryck för besökaren
+
+Syfte: Presentera företagets kärnbudskap och värdeerbjudande direkt
+Visuella element:
+- Bakgrundsbild som täcker hela viewport-höjden
+- Centrerad text och call-to-action knapp
+- Modern, professionell layout
+
+Tekniska implementationer:
+- height: 100vh för full skärmhöjd
+- Flexbox för perfekt centrering av innehåll
+- Absolut positionerad bakgrundsbild (z-index: -1)
+- object-fit: cover för att bilden ska fylla området utan distortion
+- position: relative på container för att bakgrundsbilden ska positioneras relativt denna
+
+Responsiv design:
+- Texten skalas automatiskt med viewport
+- Bakgrundsbilden anpassar sig till olika skärmstorlekar
+- Call-to-action knappen förblir klickbar på alla enheter
+*/
+
+/* Fullskärm hero-sektion */
 .hero {
-    width: 100%;
-    height: 100vh;
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 0 20px;
+    height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    position: relative;
 }
 
-.hero h1 { 
-    color: white; 
-    font-size: clamp(32px, 8vw, 48px); 
-    text-align: center; 
+/* Hero bakgrundsbild - skapar visuell impact */
+.hero-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: -1;
 }
 
-.hero p { 
-    color: #ccc; 
-    font-size: 18px; 
-    text-align: center; 
-}
+/* Rubrik och text i hero */
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; color: white; }
+.hero p { color: #ccc; font-size: 1.2rem; margin-bottom: 2rem; }
 
+/* Tema-växlingsknapp */
 .hero-knapp {
-    background: white;
-    color: #000;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: transform 0.2s, background 0.2s;
+    padding: 12px 30px; border-radius: 25px; border: none;
+    background: white; color: black; font-weight: bold; cursor: pointer; transition: 0.3s;
 }
 
-.hero-knapp:hover { 
-    background: #ddd; 
-    transform: translateY(-2px);
+.hero-knapp:hover { transform: translateY(-3px); background: #ccc; }
+
+/* --- Profile Section --- */
+/*
+PROFIL-SEKTION: Bygger förtroende genom personlig presentation
+
+Syfte: Introducera företagets ledare eller grundare för att skapa personlig koppling
+Visuella element:
+- Rundad profilbild för professionell look
+- Hierarkisk typografi (namn > titel > beskrivning)
+- Mörk bakgrund för kontrast mot vit text
+
+Tekniska detaljer:
+- Centrerad layout med max-width container för läsbarhet
+- border-radius: 50% för cirkulär profilbild
+- Färgkodad typografi-hierarki (#333 border, #888 för titel, #ccc för beskrivning)
+- padding: 60px 5% för luft runt sektionen och marginaler från sidorna
+
+Responsiv design:
+- Profilbilden skalas proportionerligt
+- Texten wrappar naturligt på små skärmar
+- Container-centrering fungerar på alla bredder
+*/
+
+/* Profil-sektion med bild och information */
+.profile-section {
+    padding: 60px 5%; background: #111; text-align: center;
 }
 
-/* --- Cards Sektion --- */
-.cards-Sektion {
-    background: #1a1a1a;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+.profile-container {
+    max-width: 600px; margin: 0 auto;
 }
 
-.cards-Sektion h2 { 
-    color: white; 
-    font-size: 36px; 
-    text-align: center; 
+.profile-image {
+    width: 150px; height: 150px; border-radius: 50%;
+    border: 4px solid #333; margin-bottom: 20px;
 }
 
+.profile-name {
+    font-size: 2rem; margin-bottom: 10px; color: white;
+}
+
+.profile-title {
+    color: #888; font-size: 1.1rem; margin-bottom: 20px;
+}
+
+.profile-description {
+    color: #ccc; font-size: 1rem; line-height: 1.6;
+}
+
+/* --- Cards (Vecka 3 & 4) --- */
+/*
+TJÄNSTER-SEKTION: Visar företagets expertisområden interaktivt
+
+Syfte: Presentera olika tjänster/kompetensområden med möjlighet till användarengagemang
+Interaktiva element:
+- Hover-effekter på korten för bättre UX
+- Gillningsknappar med räknare för användarfeedback
+- Responsiv grid-layout som anpassar sig till skärmstorlek
+
+Tekniska implementationer:
+- CSS Grid med auto-fit och minmax() för automatisk responsivitet
+- grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) skapar flexibla kolumner
+- gap: 2rem för jämna mellanrum mellan kort
+- Hover states med border-color och background changes
+- Gillningsknappar med JavaScript-integration för räknarfunktion
+
+Responsiv design:
+- Kort automatiskt omarrangeras från 4 kolumner → 2 kolumner → 1 kolumn
+- Minsta kortbredd 250px, expanderar till fill available space
+- Padding och margins anpassar sig till olika skärmstorlekar
+*/
+
+/* Sektion för tjänstekort */
+.cards-Sektion { padding: 80px 5%; background: #0a0a0a; }
+.cards-Sektion h2 { text-align: center; margin-bottom: 40px; }
+
+/* Grid-layout för korten */
 .cards-Ruta {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    width: 100%;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem; max-width: 1200px; margin: 0 auto;
 }
 
+/* Individuellt kort */
 .card {
-    background: #2a2a2a;
-    padding: 40px 30px;
-    border-radius: 12px;
-    text-align: center;
-    transition: background 0.3s;
+    background: #151515; padding: 30px; border-radius: 15px;
+    border: 1px solid #222; transition: 0.3s;
 }
 
-.card:hover {
-    background: #333;
-}
+.card:hover { border-color: #444; background: #1c1c1c; }
 
-.card h3 { 
-    color: white; 
-    font-size: 20px; 
-    margin-bottom: 15px; 
-}
-
-.card p { 
-    color: #aaa; 
-    font-size: 14px; 
-    line-height: 1.6; 
-}
-
-/* Like-knapp styling */
+/* Gillningsknapp på korten */
 .like-btn {
-    background: transparent;
-    border: 1px solid #444;
-    color: #888;
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: all 0.3s ease;
-    filter: grayscale(1);
-    outline: none;
+    margin-top: 15px; background: #222; border: 1px solid #333;
+    color: white; padding: 8px 15px; border-radius: 20px; cursor: pointer;
 }
 
-.like-btn.active {
-    filter: grayscale(0);
-    border-color: #ff4d4d;
-    background: rgba(255, 77, 77, 0.1);
-    transform: scale(1.1);
-}
+.like-btn.active { border-color: #ff4d4d; color: #ff4d4d; }
 
-.like-btn:hover {
-    border-color: #666;
-}
-
-.like-btn .count {
-    margin-left: 5px;
-    font-weight: bold;
-}
-
-/* --- Scroll Gallery --- */
-.sw-gallery { 
-    background: transparent; 
-    padding: 30px 20px; 
-}
-
-.sw-track {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 8px;
-}
-
-.sw-track::-webkit-scrollbar {
-    height: 4px;
-}
-
-.sw-track::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 10px;
-}
-
-.sw-item {
-    flex: 0 0 80%;
-    scroll-snap-align: start;
-    background: #222;
-    border-radius: 8px;
-    overflow: hidden;
-    min-width: 260px;
-}
-
-.sw-item img { 
-    display: block; 
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-}
-
-/* --- Footer --- */
-footer {
-    background: #000;
-    color: #fff;
-    padding: 60px 20px 20px;
-    border-top: 1px solid #222;
-}
-
+/* --- Footer (Vecka 5) --- */
+/* Footer-sektion */
+footer { padding: 60px 5% 20px; border-top: 1px solid #222; }
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem; max-width: 1200px; margin: 0 auto;
 }
+.footer-section h4 { margin-bottom: 1rem; }
+.footer-section a, .footer-section p { color: #666; text-decoration: none; display: block; margin-bottom: 5px; }
 
-.footer-section h4 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #fff;
-}
+.footer-bottom { text-align: center; margin-top: 40px; color: #333; font-size: 0.8rem; }
 
-.footer-section p, 
-.footer-section a {
-    color: #888;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 2;
-    display: block;
-    transition: color 0.3s;
-}
-
-.footer-section a:hover {
-    color: #fff;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.footer-bottom {
-    max-width: 1200px;
-    margin: 60px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid #111;
-    text-align: center;
-    color: #444;
-    font-size: 12px;
-}
-
-/* --- Media Queries --- */
-@media (min-width: 900px) {
-    .sw-item { flex: 0 0 45%; }
-}
-
+/* --- Mobil-anpassning --- */
+/* Media query för mobila enheter */
 @media (max-width: 768px) {
-    nav { display: none; }
-    
-    .menu-toggle { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 5px; 
-        cursor: pointer;
-    }
-
-    .menu-toggle span {
-        display: block;
-        width: 25px;
-        height: 2px;
-        background: white;
-    }
+    nav { display: none; } /* Döljer desktop-nav */
+    .menu-toggle { display: flex; } /* Visar hamburger-knapp */
+    .hero h1 { font-size: 2.5rem; } /* Mindre rubrik på mobil */
 }
