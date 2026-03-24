@@ -1,5 +1,40 @@
-/* Big */
-.BIG {
+
+.Heder {
+    background-color: #6B0504;
+    color: #F7F0F0;
+    align-items: right;
+    padding: 20px;
+    
+}
+.rubrik {
+    text-align: left;
+    padding-left: 20px;
+    color: #E6AF2E;
+}
+.nav {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+
+
+/* Commodore */
+.Commodore {
+    color: black;
     width: 300px;
     height: 300px;
+    background-color: #572e2e;
+    padding: 20px;
+}
+
+.Cheap Computer {
+    width: 300px;
+    height: 300px;
+}
+
+.footer {
+    background-color: #2E4057;
+    color: #E6AF2E;
+    text-align: center;
+    padding: 10px;
 }
