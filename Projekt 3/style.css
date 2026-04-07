@@ -1,9 +1,15 @@
-
+body {
+    margin: 0;
+    padding: 0;
+    
+}
 .Heder {
     background-color: #6B0504;
     color: #F7F0F0;
     align-items: right;
+    display: flex;
     padding: 20px;
+    justify-content: space-around;
     
 }
 .rubrik {
@@ -12,8 +18,16 @@
     color: #E6AF2E;
 }
 .nav {
+    display: flex;
+    margin-left: 20px;
+    color: aliceblue;
+    align-items: center;
+}
+.nav a {
     display: inline-block;
     margin-left: 20px;
+    color: rgb(255, 255, 255);
+    align-items: center;
 }
 
 
@@ -25,6 +39,7 @@
     height: 300px;
     background-color: #572e2e;
     padding: 20px;
+    
 }
 
 .Cheap Computer {
@@ -36,5 +51,8 @@
     background-color: #2E4057;
     color: #E6AF2E;
     text-align: center;
-    padding: 10px;
+    padding: 100px;
+    display: flex;
+    justify-content: right;
+
 }

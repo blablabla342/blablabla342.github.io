@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "blablabla342.github.io",
+			"path": ".."
+		},
+		{
+			"name": "1 Steve Jobs",
+			"path": "../../../../Downloads/1 Steve Jobs"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "blablabla342.github.io"
+	}
+}
