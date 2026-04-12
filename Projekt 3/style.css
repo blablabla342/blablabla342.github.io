@@ -51,9 +51,9 @@ body {
     background-color: #2E4057;
     color: #E6AF2E;
     text-align: center;
-    padding: 100px;
+    padding: 50px;
     display: flex;
-    justify-content: right;
+    justify-content: space-between ;
     list-style-position: inside;
 
 }
@@ -63,11 +63,22 @@ body {
     font-size: 30px;
     margin-bottom: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 
 }
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.footer-nav { 
+display: flex; 
+flex-direction: column; 
+ gap: 15px; 
+ } 
+
+ .footer-nav a {
+ color: #ffffff; 
+text-decoration: none; 
+}
+.stil {
+    background-color: #2E4057;
+    color: #E6AF2E;
+    text-align: center;
+    padding: 20px;
 }
