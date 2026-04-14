@@ -32,21 +32,47 @@ body {
 
 
 
-/* Commodore */
+
 .Commodore {
-    color: black;
-    width: 300px;
-    height: 300px;
+    color: white; 
     background-color: #572e2e;
-    padding: 20px;
+    padding: 50px;
+    margin: 20px 0;
     
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 40px;  
+}
+
+.textcon2 {
+    flex: 1;            
+    text-align: left;
+}
+
+.commodore-img {
+    width: 400px;      
+    height: auto;
+    display: block;
 }
 
 .Cheap-Computer {
-    width: 300px;
-    height: 300px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 40px;          
 }
 
+.textcon {
+    flex: 1;            
+    text-align: left;  
+}
+
+.computer-img {
+    width: 400px;      
+    height: auto;      
+}
 .footer {
     background-color: #2E4057;
     color: #E6AF2E;
