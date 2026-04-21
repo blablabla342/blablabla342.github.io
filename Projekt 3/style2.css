@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+.Heder {
+    background-color: #6B0504;
+    color: #F7F0F0;
+    align-items: right;
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    
+}
+.rubrik {
+    text-align: left;
+    padding-left: 20px;
+    color: #E6AF2E;
+}
+.nav {
+    display: flex;
+    margin-left: 20px;
+    color: aliceblue;
+    align-items: center;
+}
+.nav a {
+    display: inline-block;
+    margin-left: 20px;
+    color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+
+
+
+.Commodore {
+    color: white; 
+    background-color: #ffffff;
+    padding: 50px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 40px;  
+}
+
+.textcon2 {
+    flex: 1;            
+    text-align: right;
+    color: #000;
+}
+
+.commodore-img {
+    width: 400px;      
+    height: auto;
+    display: block;
+}
+button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.Cheap-Computer {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+          
+}
+
+.textcon {
+    flex: 1;            
+    text-align: left;  
+}
+
+.computer-img {
+    width: 400px;      
+    height: auto;      
+}
+
+.footer {
+    background-color: #2E4057;
+    color: #E6AF2E;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between ;
+    list-style-position: inside;
+
+}
+
+.rubrik2 {
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: left;
+
+}
+.footer-nav { 
+ display: flex;
+    margin-left: 20px;
+    color: aliceblue;
+    align-items: center;
+ } 
+
+ .footer-nav a {
+ display: inline-block;
+    margin-left: 20px;
+    color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+.stil {
+    background-color: #2E4057;
+    color: #E6AF2E;
+    text-align: center;
+    padding: 20px;
+}
