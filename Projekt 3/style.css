@@ -54,14 +54,20 @@ body {
     height: auto;
     display: block;
 }
-button {
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
+
+.knappen2 {
+    display: flex;
+    justify-content: flex-end; 
+    padding: 20px;
+}
+
+.knappen {
+    background-color: #6B0504;
+    color: #F7F0F0;       
+    text-decoration: none;   
     padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
     border-radius: 5px;
+    font-family: sans-serif;
 }
 
 .Cheap-Computer {
@@ -120,4 +126,13 @@ button {
     color: #E6AF2E;
     text-align: center;
     padding: 20px;
+}
+
+.text {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+  
+    padding: 300px;
+  height: 300;
 }
