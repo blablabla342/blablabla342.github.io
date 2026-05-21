@@ -6,7 +6,7 @@ body {
 .Heder {
     background-color: #6B0504;
     color: #F7F0F0;
-    align-items: right;
+    align-items: center;
     display: flex;
     padding: 20px;
     justify-content: space-around;
@@ -17,13 +17,13 @@ body {
     padding-left: 20px;
     color: #ffffff;
 }
-.nav {
+header .nav {
     display: flex;
     margin-left: 20px;
     color: aliceblue;
     align-items: center;
 }
-.nav a {
+header .nav a {
     display: inline-block;
     margin-left: 20px;
     color: rgb(255, 255, 255);
@@ -50,7 +50,9 @@ body {
 }
 
 .commodore-img {
-    width: 400px;      
+    flex: 1;
+    max-width: 400px;  
+    width: 100%;    
     height: auto;
     display: block;
 }
@@ -84,6 +86,7 @@ body {
 }
 
 .computer-img {
+    max-width: 100%;
     width: 400px;      
     height: auto;      
 }
@@ -95,30 +98,22 @@ body {
     padding: 30px;
     display: flex;
     justify-content: space-between ;
-    list-style-position: inside;
+    align-items: center;
 
 }
 
 .rubrik2 {
     color: #ffffff;
     font-size: 30px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: left;
+    margin: 0;
 
 }
-.footer-nav { 
- display: flex;
-    margin-left: 20px;
-    color: aliceblue;
-    align-items: center;
- } 
 
- .footer-nav a {
+ footer .nav a {
  display: inline-block;
     margin-left: 20px;
     color: rgb(255, 255, 255);
-    align-items: center;
+ text-decoration: none;
 }
 
 .stil {
@@ -132,7 +127,6 @@ body {
     background-color: #ffffff;
     color: #000000;
     text-align: center;
-  
-    padding: 300px;
-  height: 300;
+     padding: 300px;
+    height: 300px;
 }
