@@ -6,7 +6,7 @@ body {
 .Heder {
     background-color: #6B0504;
     color: #F7F0F0;
-    align-items: right;
+    align-items: center;
     display: flex;
     padding: 20px;
     justify-content: space-around;
@@ -15,15 +15,15 @@ body {
 .rubrik {
     text-align: left;
     padding-left: 20px;
-    color: #E6AF2E;
+    color: #ffffff;
 }
-.nav {
+header .nav {
     display: flex;
     margin-left: 20px;
     color: aliceblue;
     align-items: center;
 }
-.nav a {
+header .nav a {
     display: inline-block;
     margin-left: 20px;
     color: rgb(255, 255, 255);
@@ -31,11 +31,9 @@ body {
 }
 
 
-
-
 .Commodore {
     color: white; 
-    background-color: #ffffff;
+    background-color: #572e2e;
     padding: 50px;
     
     display: flex;
@@ -47,22 +45,29 @@ body {
 .textcon2 {
     flex: 1;            
     text-align: right;
-    color: #000;
 }
 
 .commodore-img {
-    width: 400px;      
+    flex: 1;
+    max-width: 400px;  
+    width: 100%;    
     height: auto;
     display: block;
 }
-button {
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
+
+.knappen2 {
+    display: flex;
+    justify-content: flex-end; 
+    padding: 20px;
+}
+
+.knappen {
+    background-color: #6B0504;
+    color: #F7F0F0;       
+    text-decoration: none;   
     padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
     border-radius: 5px;
+    font-family: sans-serif;
 }
 
 .Cheap-Computer {
@@ -79,6 +84,7 @@ button {
 }
 
 .computer-img {
+    max-width: 100%;
     width: 400px;      
     height: auto;      
 }
@@ -90,30 +96,22 @@ button {
     padding: 30px;
     display: flex;
     justify-content: space-between ;
-    list-style-position: inside;
+    align-items: center;
 
 }
 
 .rubrik2 {
     color: #ffffff;
     font-size: 30px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: left;
+    margin: 0;
 
 }
-.footer-nav { 
- display: flex;
-    margin-left: 20px;
-    color: aliceblue;
-    align-items: center;
- } 
 
- .footer-nav a {
+ footer .nav a {
  display: inline-block;
     margin-left: 20px;
     color: rgb(255, 255, 255);
-    align-items: center;
+ text-decoration: none;
 }
 
 .stil {
@@ -121,6 +119,14 @@ button {
     color: #E6AF2E;
     text-align: center;
     padding: 20px;
+}
+
+.text {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+     padding: 300px;
+    height: 300px;
 }
 .NNN {
     background-color: #ffffff;
